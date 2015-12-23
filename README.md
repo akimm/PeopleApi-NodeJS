@@ -16,7 +16,7 @@ Global Modules
 - npm install -g apidoc
 
 ## Dependencies (see packages for most up to date dependencies)
-### Runtime dependencies
+##### Runtime dependencies
 - Express - used for routing and other http methods
   - npm install express --save
 
@@ -26,7 +26,7 @@ Global Modules
 - Mongoose - used for MongoDB access
   - npm install mongoose --save
 
-### Dev Dependencies
+##### Dev Dependencies
 - Mocha - Used for unit and integration testing
   - npm install -g mocha
 
@@ -42,7 +42,7 @@ Global Modules
 - APIDoc - Used for api documentation
   - npm install -g apidoc
 
-### Future Dep For Sandbox
+##### Future Dep For Sandbox
 - Couch DB -
   - npm install node-couchdb --save
 - Memcache
