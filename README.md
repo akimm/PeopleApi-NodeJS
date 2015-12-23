@@ -2,7 +2,7 @@
 People API in Node JS
 
 
-# Pre Requisites
+## Pre Requisites
 Node JS
 - Download and install from https://nodejs.org/
 
@@ -15,18 +15,18 @@ Global Modules
 - npm install -g istanbul
 - npm install -g apidoc
 
-# Dependencies (see packages for most up to date dependencies)
-Runtime dependencies
+## Dependencies (see packages for most up to date dependencies)
+### Runtime dependencies
 - Express - used for routing and other http methods
   - npm install express --save
 
 - Body Parser - used for parsing out information passed on the body to api calls
   - npm install body-parser --save
 
-Mongoose - used for MongoDB access
+- Mongoose - used for MongoDB access
   - npm install mongoose --save
 
-Dev Dependencies
+### Dev Dependencies
 - Mocha - Used for unit and integration testing
   - npm install -g mocha
 
@@ -42,21 +42,21 @@ Dev Dependencies
 - APIDoc - Used for api documentation
   - npm install -g apidoc
 
-Future Dep For Sandbox
+### Future Dep For Sandbox
 - Couch DB -
   - npm install node-couchdb --save
 - Memcache
   - npm install memcache --save
 
 
-# Starting the api
+## Starting the api
 From the app folder run the following command: node app.js
 
-# Running / The Api Methods
+## Running / The Api Methods
 From Postman or other api caller:
 
 
-#Tests
+## Tests
 
 To run all unit and integration tests run the following from a command line:
 mocha --recursive
@@ -65,7 +65,7 @@ To run/create a code coverage report run the following from a command line in th
 istanbul cover \_mocha -- -R spec
 istanbul cover test.js Where test.js is your file containg tests to get code coverage from.
 
-# TODOS
+## TODOS
 Add in mssql path
 Add Setting To switch from data source Types
 Get app settings from modules that need them
