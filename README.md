@@ -16,42 +16,41 @@ Global Modules
 - npm install -g apidoc
 
 # Dependencies (see packages for most up to date dependencies)
-Express - used for routing and other http methods
-npm install express --save
+Runtime dependencies
+- Express - used for routing and other http methods
+  - npm install express --save
 
-Body Parser - used for parsing out information passed on the body to api calls
-npm install body-parser --save
+- Body Parser - used for parsing out information passed on the body to api calls
+  - npm install body-parser --save
 
 Mongoose - used for MongoDB access
-npm install mongoose --save
+  - npm install mongoose --save
 
-# Dev Dependencies
-Mocha - Used for unit and integration testing
-npm install -g mocha
+Dev Dependencies
+- Mocha - Used for unit and integration testing
+  - npm install -g mocha
 
-Chai - Used for expectations on unit and integration testing
-npm install chai chai-http --save-dev
+- Chai - Used for expectations on unit and integration testing
+  - npm install chai chai-http --save-dev
 
-Sinon - Used for mocking during unit testing
-npm install sinon --save-dev
+- Sinon - Used for mocking during unit testing
+  - npm install sinon --save-dev
 
-Istanbul - Used for generating code coverage
-npm install -g istanbul
+- Istanbul - Used for generating code coverage
+  - npm install -g istanbul
 
-APIDoc - Used for api documentation
-npm install -g apidoc
+- APIDoc - Used for api documentation
+  - npm install -g apidoc
 
-
-# Future Dep For Sandbox
-Couch DB -
-npm install node-couchdb --save
-
-Memcache
-npm install memcache --save
+Future Dep For Sandbox
+- Couch DB -
+  - npm install node-couchdb --save
+- Memcache
+  - npm install memcache --save
 
 
 # Starting the api
-From the app folder runt the following command: node app.js
+From the app folder run the following command: node app.js
 
 # Running / The Api Methods
 From Postman or other api caller:
@@ -69,6 +68,5 @@ istanbul cover test.js Where test.js is your file containg tests to get code cov
 # TODOS
 Add in mssql path
 Add Setting To switch from data source Types
-Get istanbul working for coverage
 Get app settings from modules that need them
- - app/BizLogic/People.js
+ - app/lib/People.js
