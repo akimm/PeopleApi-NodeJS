@@ -2,12 +2,12 @@ var sinon = require('sinon');
 var expect = require('chai').expect;
 
 var mongoose = require('mongoose');
-var People = require('../../../../app/lib/People');
+var People = require('../../../app/lib/People');
 var PersonModel = mongoose.model('Person');
 
 
 describe('People - Unit tests', function() {
-  it('#mongoGetAll', function(done) {
+  it('#getAll', function(done) {
 
     // test setup
     var people = [
@@ -26,7 +26,7 @@ describe('People - Unit tests', function() {
     sinon.stub(PersonModel, 'find').yields(null, people);
 
     // calling the test case
-    People.mongoGetAll(function(err, peopleReturned) {
+    People.getAll(function(err, peopleReturned) {
       // asserting
       expect(err).to.be.null;
       expect(peopleReturned).to.eql([

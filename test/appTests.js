@@ -31,9 +31,9 @@ describe('People Controller - Integration', function() {
     done();
   });
 
-  it('should list ALL People on /mongo/people GET', function(done) {
+  it('should list ALL People on /people GET', function(done) {
     chai.request(server)
-      .get('/mongo/people')
+      .get('/people')
       .end(function(err, res){
         res.should.have.status(200);
         res.should.be.json;
@@ -49,7 +49,7 @@ describe('People Controller - Integration', function() {
       });
   });
 
-  it('should list a SINGLE person on /mongo/people/<personId> GET', function(done) {
+  it('should list a SINGLE person on /people/<personId> GET', function(done) {
       var newPerson = new Person({
         _id: mongoose.Types.ObjectId(),
         firstName: 'Super',
@@ -58,7 +58,7 @@ describe('People Controller - Integration', function() {
       });
       newPerson.save(function(err, data) {
         chai.request(server)
-          .get('/mongo/people/'+data.id)
+          .get('/people/'+data.id)
           .end(function(err, res){
             res.should.have.status(200);
             res.should.be.json;
@@ -76,9 +76,9 @@ describe('People Controller - Integration', function() {
       });
   });
 
-  it('should add a SINGLE person on /mongo/people POST', function(done) {
+  it('should add a SINGLE person on /people POST', function(done) {
     chai.request(server)
-      .post('/mongo/people')
+      .post('/people')
       .send({'firstName': 'Green', 'lastName': 'Lantern', 'email': 'greenlantern@oa.com'})
       .end(function(err, res){
         res.should.have.status(200);
