@@ -15,7 +15,11 @@ Global Modules
 - npm install -g istanbul
 - npm install -g apidoc
 
-## Dependencies (see packages for most up to date dependencies)
+Project dependencies
+- From command line in the project root folder run the following:
+  - npm install (ignore any errors from mongo installation)
+
+## Dependencies
 ##### Runtime dependencies
 - Express - used for routing and other http methods
   - npm install express --save
@@ -62,11 +66,17 @@ To run all unit and integration tests run the following from a command line:
 mocha --recursive
 
 To run/create a code coverage report run the following from a command line in the root folder:
-istanbul cover \_mocha -- -R spec
+istanbul cover node_modules/mocha/bin/\_mocha -- --recursive (non windows no need for the path in front of \_mocha)
 istanbul cover test.js Where test.js is your file containg tests to get code coverage from.
 
 ## TODOS
 Add in mssql path
 Add Setting To switch from data source Types
 Get app settings from modules that need them
- - app/lib/People.js
+ - app/lib/people.js
+
+error handling on api calls
+Security cookie parsing
+provide paging mechanism for get all api calls.
+Error Logging
+Don't remove data during Tests

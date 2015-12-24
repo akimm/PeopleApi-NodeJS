@@ -4,8 +4,8 @@ var chai = require('chai');
 var chaiHttp = require('chai-http');
 var mongoose = require("mongoose");
 
-var server = require('../app/app');
-var Person = require("../app/models/PersonSchema");
+var server = require('../../app/app');
+var Person = require("../../app/models/personSchema");
 
 var should = chai.should();
 chai.use(chaiHttp);
@@ -31,7 +31,7 @@ describe('People Controller - Integration', function() {
     done();
   });
 
-  it('should list ALL People on /people GET', function(done) {
+  it('All people returned on /people GET', function(done) {
     chai.request(server)
       .get('/people')
       .end(function(err, res){
@@ -49,7 +49,7 @@ describe('People Controller - Integration', function() {
       });
   });
 
-  it('should list a SINGLE person on /people/<personId> GET', function(done) {
+  it('Single person returned by id on /people/<id> GET', function(done) {
       var newPerson = new Person({
         _id: mongoose.Types.ObjectId(),
         firstName: 'Super',
@@ -76,7 +76,7 @@ describe('People Controller - Integration', function() {
       });
   });
 
-  it('should add a SINGLE person on /people POST', function(done) {
+  it('Single person added on /people POST', function(done) {
     chai.request(server)
       .post('/people')
       .send({'firstName': 'Green', 'lastName': 'Lantern', 'email': 'greenlantern@oa.com'})

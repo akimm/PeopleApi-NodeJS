@@ -3,9 +3,9 @@ var Schema = require('mongoose').Schema,
 
 var Cars = Schema({
     _id  : ObjectId,
-    firstName : String,
-    lastName  : String,
-    email     : String
+    make : String,
+    model  : String,
+    year     : Number
 });
 
 Cars.methods.getAll = function(callback) {
@@ -15,7 +15,7 @@ Cars.methods.getAll = function(callback) {
 
 module.exports = db.model('Cars', Cars);
 
-/*
+/* 
 PersonModel.pre('save', function (next) {
   notify(this.get('email'));
   next();

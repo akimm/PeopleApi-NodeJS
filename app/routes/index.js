@@ -12,6 +12,12 @@ router.post('/people', peopleController.createPerson);
 
 
 /* ************** CARS ROUTES ************************* */
+router.get('/cars', carsController.getAll);
+router.get('/cars/:carId', carsController.getById);
+router.post('/cars', carsController.createCar);
+
+
+/* ************** PEOPLES CARS ROUTES ************************* */
 router.get('/people/:personId/cars', carsController.helloWorld);
 router.get('/people/:personId/cars', carsController.helloWorld);
 

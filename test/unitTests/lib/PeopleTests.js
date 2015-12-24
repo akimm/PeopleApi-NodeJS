@@ -9,6 +9,7 @@ var PersonModel = mongoose.model('Person');
 describe('People - Unit tests', function() {
   it('#getAll', function(done) {
 
+    // ARRANGE
     // test setup
     var people = [
       {
@@ -25,6 +26,7 @@ describe('People - Unit tests', function() {
     // mocking MongoDB
     sinon.stub(PersonModel, 'find').yields(null, people);
 
+    // ACT/ASSERT
     // calling the test case
     People.getAll(function(err, peopleReturned) {
       // asserting

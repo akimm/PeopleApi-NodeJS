@@ -1,12 +1,40 @@
-var people = require('../lib/People.js');
+var people = require('../lib/people.js');
 
 /* *********************** Get Methods  *************************/
+/**
+* @api {get} /people Request people
+* @apiVersion 0.0.7
+* @apiSampleRequest http://localhost:3000/people
+* @apiName getAll
+* @apiGroup People
+*
+* @apiSuccess {Object[]} people List of people.
+* @apiSuccess {mongoose.Schema.ObjectId} people._id Unique id given to the person
+* @apiSuccess {String} people.firstName First Name of the person
+* @apiSuccess {String} people.lastName Last Name of the person
+* @apiSuccess {String} people.email Email of the person
+*/
 exports.getAll = function(req, res, next) {
   people.getAll(function(err, people) {
     if (err) return next(err);
     res.json(people);
   });
 };
+
+/**
+* @api {get} /people/:personId Request Specific Persons information
+* @apiVersion 0.0.7
+* @apiSampleRequest http://localhost:3000/people/567afceccaff7d9c39e1b7ef
+* @apiName getById
+* @apiGroup People
+*
+*
+* @apiSuccess {Object} person The Person
+* @apiSuccess {mongoose.Schema.ObjectId} person._id Unique id given to the person
+* @apiSuccess {String} person.firstName First Name of the person
+* @apiSuccess {String} person.lastName Last Name of the person
+* @apiSuccess {String} person.email Email of the person
+*/
 exports.getById = function(req, res) {
   people.getById(req.params.personId , function(err, people) {
     if (err) return next(err);
