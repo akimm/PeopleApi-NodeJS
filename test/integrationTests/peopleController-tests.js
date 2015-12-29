@@ -15,9 +15,12 @@ describe('People Controller - Integration', function() {
 
   Person.collection.drop();
 
+  var newPersonId;
+
   beforeEach(function(done){
+    newPersonId = mongoose.Types.ObjectId();
     var newPerson = new Person({
-      _id: mongoose.Types.ObjectId(),
+      _id: newPersonId,
       firstName: 'Bat',
       lastName: 'man',
       email: 'batman@gotham.com'
@@ -27,7 +30,11 @@ describe('People Controller - Integration', function() {
     });
   });
   afterEach(function(done){
-    Person.collection.drop();
+    Person.remove({_id: newPersonId}, function (err, removed)
+  {
+
+  });
+    newPersonId = undefined;
     done();
   });
 
@@ -49,7 +56,7 @@ describe('People Controller - Integration', function() {
       });
   });
 
-  it('Single person returned by id on /people/<id> GET', function(done) {
+  it('Person by id on /people/<id> GET', function(done) {
       var newPerson = new Person({
         _id: mongoose.Types.ObjectId(),
         firstName: 'Super',
@@ -76,7 +83,7 @@ describe('People Controller - Integration', function() {
       });
   });
 
-  it('Single person added on /people POST', function(done) {
+  it('Person added on /people POST', function(done) {
     chai.request(server)
       .post('/people')
       .send({'firstName': 'Green', 'lastName': 'Lantern', 'email': 'greenlantern@oa.com'})

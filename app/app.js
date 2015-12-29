@@ -18,8 +18,8 @@ app.use(function(req, res, next) {
 });
 
 // Request/Response error handling
-app.use(errorHandling.notFoundErrorHandler);
-app.use(errorHandling.errorHandler)
+//app.use(errorHandling.notFoundErrorHandler);
+//app.use(errorHandling.errorHandler)
 
 // Body parsing of requests
 app.use(bodyParser.json()); // support json encoded bodies

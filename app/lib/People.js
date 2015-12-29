@@ -8,13 +8,23 @@ exports.getAll = function(callback) {
 };
 
 exports.getById = function(personId, callback) {
-  if (!personId || personId <= 0) {
+  if (!personId || personId.trim().length == 0) {
+    console.log('Bad Person Id');
     var err = new Error('Bad Request');
     err.status = 400;
     callback(err, {});
   }
   else {
-    personSchema.findById(personId, callback);
+    personSchema.findById(personId, function(err, person) {
+      if (!person) {
+        var error = new Error('Not Found');
+        error.status = 404;
+        callback(error, null);
+      }
+      else {
+        callback(err, person);
+      }
+    });
   }
 };
 

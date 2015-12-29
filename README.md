@@ -30,6 +30,9 @@ Project dependencies
 - Mongoose - used for MongoDB access
   - npm install mongoose --save
 
+- Log - used for Logging
+  - npm install log --save
+  
 ##### Dev Dependencies
 - Mocha - Used for unit and integration testing
   - npm install -g mocha
@@ -66,11 +69,12 @@ To run all unit and integration tests run the following from a command line:
 mocha --recursive
 
 To run/create a code coverage report run the following from a command line in the root folder:
+istanbul cover node_modules/mocha/bin/\_mocha -- --recursive
 istanbul cover node_modules/mocha/bin/\_mocha -- --recursive (non windows no need for the path in front of \_mocha)
 istanbul cover test.js Where test.js is your file containg tests to get code coverage from.
 
 ## TODOS
-Add in mssql path
+
 Add Setting To switch from data source Types
 Get app settings from modules that need them
  - app/lib/people.js
@@ -80,3 +84,6 @@ Security cookie parsing
 provide paging mechanism for get all api calls.
 Error Logging
 Don't remove data during Tests
+
+##### Future
+Add in mssql path

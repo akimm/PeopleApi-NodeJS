@@ -36,9 +36,9 @@ exports.getAll = function(req, res, next) {
 * @apiSuccess {String} person.email Email of the person
 */
 exports.getById = function(req, res) {
-  people.getById(req.params.personId , function(err, people) {
+  people.getById(req.params.personId , function(err, person) {
     if (err) return next(err);
-    res.json(people);
+    res.json(person);
   });
 };
 

@@ -10,6 +10,7 @@
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
     "ldapjs": "^1.0.0",
+    "log": "^1.4.0",
     "memcache": "^0.3.0",
     "mongodb": "^2.1.0",
     "mongoose": "^4.3.3",
